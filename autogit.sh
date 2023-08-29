@@ -1,5 +1,5 @@
 git add -A
-git commit -m "first commit"
+git commit -m "Next topic: Enums"
 git push -u origin main
 git status
 
