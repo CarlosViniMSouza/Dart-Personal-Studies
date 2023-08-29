@@ -1,3 +1,24 @@
+import '../index.dart';
+
+class Student {
+  String name;
+  int code;
+
+  // The constructor
+  Student(this.name, this.code) {
+    // to do something
+  }
+
+  // Method to standardize the constructor
+  Student.unlaunched(String name) : this(name, 0);
+
+  // Method for describe object
+  void describe() {
+    print("\nStudent: $name");
+    print("Code Student: $code");
+  }
+}
+
 void main() {
   // Primitive Types
   var myName = "Carlos";
@@ -7,8 +28,7 @@ void main() {
 
   // Lists, Objects (Complex Types)
   var myList = ['Notebook', 'Keyboard', 'Mouse', 'Monitor'];
-  print(
-      "My setup: ${myList[0]}, ${myList[1]}, ${myList[2]} and ${myList[3]} \n");
+  print("My setup: ${myList[0]} and ${myList[3]} \n");
 
   var myObject = {
     'job': 'Software Engineer',
@@ -36,4 +56,27 @@ void main() {
   while (count <= 10) {
     print(count++);
   }
+
+  // Functions type 'String' and 'int'
+  int returnSum(int n1, int n2) {
+    return n1 + n2;
+  }
+
+  print("The result is ${returnSum(5, 7)}");
+
+  String returnPhrase(String sample) {
+    return "My word is $sample";
+  }
+
+  print(returnPhrase("Dart"));
+
+  // Working with a Arrow Function
+  myList.where((element) => element.contains('Keyboard')).forEach(print);
+
+  // Testing functionTest()
+  functionTest();
+
+  // Testing our 'Student Class'
+  var student = Student("Carlos", 201345);
+  student.describe();
 }
