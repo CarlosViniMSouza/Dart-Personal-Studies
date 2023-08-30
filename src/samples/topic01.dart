@@ -25,6 +25,20 @@ class Course extends Student {
   Course(super.name, super.code, this.notes);
 }
 
+// Mixin is a way of use multiple class hierachies.
+mixin Astronaut {
+  int astronauts = 3;
+
+  void returnQuantity() {
+    print("We have $astronauts on board");
+  }
+}
+
+class AstronautCraft extends Student with Astronaut {
+  // ...
+  AstronautCraft(super.name, super.code);
+}
+
 void main() {
   // Primitive Types
   var myName = "Carlos";

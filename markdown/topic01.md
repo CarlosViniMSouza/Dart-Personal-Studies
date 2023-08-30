@@ -114,3 +114,60 @@ For use the characteristics Class:
 var student = Student("Carlos", 201345);
 student.describe();
 ```
+
+### Enums
+
+Enums are a way of enumerating a predefined set of values or instances in a way which ensures that there cannot be any other instances of that type.
+
+```dart
+enum PlanetType { terrestrial, gas, ice };
+```
+
+```dart
+/// Enum that enumerates the different planets in our solar system
+/// and some of their properties.
+enum Planet {
+  mercury(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  venus(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  // ···
+  bool get isGiant =>
+    planetType == PlanetType.gas || planetType == PlanetType.ice;
+}
+```
+
+### Inheritance
+
+Dart has single inheritance.
+
+```dart
+class Course extends Student {
+  double notes;
+
+  Course(super.name, super.code, this.notes);
+}
+```
+
+### Mixins
+
+Mixins are a way of reusing code in multiple class hierarchies.
+
+```dart
+mixin Astronaut {
+  int astronauts = 3;
+
+  void returnQuantity() {
+    print("We have $astronauts on board");
+  }
+}
+```
+
+To add a mixin’s capabilities to a class, just extend the class with the mixin.
+
+```dart
+class AstronautCraft extends Student with Astronaut {
+  // ...
+  AstronautCraft(super.name, super.code);
+}
+```
+
+AstronautCraft now has the astronauts field as well as the returnQuantity() method.
