@@ -19,6 +19,12 @@ class Student {
   }
 }
 
+class Course extends Student {
+  double notes;
+
+  Course(super.name, super.code, this.notes);
+}
+
 void main() {
   // Primitive Types
   var myName = "Carlos";
@@ -79,4 +85,7 @@ void main() {
   // Testing our 'Student Class'
   var student = Student("Carlos", 201345);
   student.describe();
+
+  // Enums - predefined set of values
+  // enum PlanetList { terrestrial, gas, ice }; // It is not working ...
 }
