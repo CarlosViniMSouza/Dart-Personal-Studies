@@ -189,9 +189,60 @@ abstract class Describable {
   void describe();
 
   void describeWithEmphasis() {
-    print('=========');
+    print('===');
     describe();
-    print('=========');
+    print('===');
+  }
+}
+```
+
+### Async
+
+Avoid callback hell and make your code much more readable by using `async` and `await`.
+
+```dart
+const oneSecond = Duration(seconds: 1);
+// ···
+Future<void> printWithDelay(String message) async {
+  await Future.delayed(oneSecond);
+  print(message);
+}
+```
+
+You can also use `async*`, which gives you a nice, readable way to build streams.
+
+```dart
+Stream<String> report(Spacecraft craft, Iterable<String> objects) async* {
+  for (final object in objects) {
+    await Future.delayed(oneSecond);
+    yield '${craft.name} flies by $object';
+  }
+}
+```
+
+## Exceptions
+
+To raise an exception, use `throw`:
+
+```dart
+if (astronauts == 0) {
+	throw StateError('0 Astronauts');
+}
+```
+
+To catch an exception, use a `try` statement with `on` or `catch`
+
+```dart
+Future<void> describeFlybyObjects(List<String> flybyObjects) async {
+  try {
+    for (final object in flybyObjects) {
+      var description = await File('$object.txt').readAsString();
+      print(description);
+    }
+  } on IOException catch (e) {
+    print('Could not describe object: $e');
+  } finally {
+    flybyObjects.clear();
   }
 }
 ```
