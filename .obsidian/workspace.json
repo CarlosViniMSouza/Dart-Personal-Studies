@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "markdown/topic01.md",
+                "file": "markdown/topic02-Variables.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "markdown/topic01.md",
+                "file": "markdown/topic02-Variables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "markdown/topic01.md",
+                "file": "markdown/topic02-Variables.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "markdown/topic01.md"
+                "file": "markdown/topic02-Variables.md"
               }
             }
           }
@@ -148,5 +148,10 @@
     }
   },
   "active": "b0ed58446473ba09",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "markdown/topic01-Intro.md",
+    "src/samples/topic02.dart~",
+    "markdown/topic01.md",
+    "markdown/topic02-Variables.md"
+  ]
 }
