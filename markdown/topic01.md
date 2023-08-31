@@ -171,3 +171,27 @@ class AstronautCraft extends Student with Astronaut {
 ```
 
 AstronautCraft now has the astronauts field as well as the returnQuantity() method.
+
+### Interfaces and Abstract Classes
+
+All classes implicitly define an interface. Therefore, you can implement any class.
+
+```dart
+class MockSpaceship implements Spacecraft {
+    // ...
+}
+```
+
+You can create an abstract class to be extended (or implemented) by a concrete class.
+
+```dart
+abstract class Describable {
+  void describe();
+
+  void describeWithEmphasis() {
+    print('=========');
+    describe();
+    print('=========');
+  }
+}
+```
